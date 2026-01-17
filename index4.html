@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thanh Lâm</title>
+    <style>
+      .container {
+          display: flex;
+          flex-wrap: wrap; /* Wrap để xuống dòng khi hết chỗ */
+          padding: 5px;
+          justify-content: left;
+      }
+
+      .container h2 {
+        width: 100%
+      }
+
+      .card-link {
+          text-decoration: none;
+          color: inherit;
+      } 
+
+      .card-link h3:hover {
+          color: #228B22;
+      }
+
+      .card {
+          width: 200px;
+          border: 1px solid #ccc;
+          padding: 10px;
+          text-align: center;
+          border-radius: 8px; 
+          margin: 10px;
+      }
+
+      .card img {
+          width: 100%;
+          height: auto;
+      }
+
+      .card h3 {
+          font-size: 18px;
+          margin: 10px 0;
+      }
+
+      .card p {
+          font-size: 14px;
+          color: #555;
+      }
+
+      .card:hover {
+        border: 2px solid #228B22;
+      }
+      
+      .fusion h3:hover{
+        color: #9251A3;
+      }
+
+      .fusion:hover{
+        border: 2px solid #9251A3;
+      }
+
+      .synchro:hover{
+        border: 2px solid #686A71;
+      }
+
+      .synchro h3:hover{
+        color: #686A71;
+      }
+      
+      /* Từ đoạn css này đến hết css là do Gemini gợi ý để trang trí thẻ bài*/
+
+      .deck-boss {
+        border: 2px solid #9251A3;
+        box-shadow: 0 0 30px #9251A3; 
+        animation: pulse-purple 2s infinite ease-in-out;
+      }
+
+      .deck-boss:hover {
+        box-shadow: 0 0 50px #9251A3; 
+      }
+
+      .deck-boss img {
+        filter: contrast(1.1); 
+      }
+
+      .deck-boss:hover img {
+        animation: flare 0.5s ease-in-out;
+      }
+
+      @keyframes flare {
+        0% { filter: brightness(1.5); }
+        50% { filter: brightness(2) contrast(1.2); }
+        100% { filter: brightness(1.5); }
+      }
+
+      @keyframes pulse-purple {
+        0% { box-shadow: 0 0 15px rgba(146, 81, 163, 0.4); }
+        50% { box-shadow: 0 0 30px rgba(146, 81, 163, 0.8); }
+        100% { box-shadow: 0 0 15px rgba(146, 81, 163, 0.4); }
+      }
+
+      .credit {
+        background-color: #ffffff;
+        border-top: 1px solid #ccc; 
+        padding: 20px 0;           
+        margin-top: 50px;
+      }
+
+      .credit p {
+        margin: 0;
+        color: #666;
+        font-family: sans-serif;
+        font-size: 14px;
+      } 
+
+      .credit strong {
+        color: #333;
+      }
+
+      .badge-type {
+        font-size: 11px;
+        padding: 3px 10px;
+        border-radius: 4px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        z-index: 99;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+      }
+
+      .badge-type.dark { background-color: #563061; }
+      .badge-type.light { background-color: #D4AF37; color: #000; }
+      .badge-type.wind { background-color: #228B22; }
+      .badge-type.earth { background-color: #8B4513; }
+      .badge-type.spell { background-color: #1D837D; }
+      .badge-type.trap { background-color: #BC3060; }
+
+      .badge-status {
+        font-size: 10px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        z-index: 99;
+        pointer-events: none;
+        box-shadow: -1px -1px 5px rgba(0,0,0,0.5);
+      }
+      .badge-status.out {
+        background-color: #e74c3c; /* Màu đỏ cảnh báo */
+        border: 1px solid #ff0000;
+      }
+    
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../Cuối khóa/index.html">Predaplant.com</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../Cuối khóa/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../Cuối khóa/index2.html">Tạo lá bài</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Ko search đc đâu" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  
+<div class="container">
+    <h2 class="main-deck-monsters">Main Deck Monsters</h2>
+
+    <div class="card blue-eyes-boss">
+        <span class="badge-type light">Dragon / Light</span>
+        <img src="https://images.ygoprodeck.com/images/cards/89631139.jpg" alt="Blue-Eyes White Dragon" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=4007" target="_blank" class="card-link">
+            <h3>Blue-Eyes White Dragon</h3>
+        </a>
+        <p>Type: </p>
+    </div>
+
+    <div class="card alternative">
+        <span class="badge-type light">Dragon / Light</span>
+        <img src="https://images.ygoprodeck.com/images/cards/38517737.jpg" alt="Alternative Dragon" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12448" target="_blank" class="card-link">
+            <h3>Blue-Eyes Alternative White Dragon</h3>
+        </a>
+        <p>Type: </p>
+    </div>
+
+    <div class="card stone">
+        <span class="badge-type light">Dragon / Tuner / Light</span>
+        <img src="https://images.ygoprodeck.com/images/cards/71039903.jpg" alt="White Stone" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12318" target="_blank" class="card-link">
+            <h3>The White Stone of Ancients</h3>
+        </a>
+        <p>Type: Summoner </p>
+    </div>
+
+    <div class="card sage">
+        <span class="badge-type light">Spellcaster / Tuner / Light</span>
+        <img src="https://images.ygoprodeck.com/images/cards/8240199.jpg" alt="Sage" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12319" target="_blank" class="card-link">
+            <h3>Sage with Eyes of Blue</h3>
+        </a>
+        <p>Type: Searcher & Summoner </p>
+    </div>
+
+    <div class="card metal">
+        <span class="badge-type dark">Dragon/ Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/88264978.jpg" alt="REDMD" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=7509" target="_blank" class="card-link">
+            <h3>Red-Eyes Darkness Metal Dragon</h3>
+        </a>
+        <p>Type: Dragon Reviver</p>
+    </div>
+
+    <div class="card remus">
+        <span class="badge-type wind">Dragon / Tuner / Wind</span>
+        <img src="https://images.ygoprodeck.com/images/cards/54311029.jpg" alt="Remus" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15730" target="_blank" class="card-link">
+            <h3>Dragunity Remus</h3>
+        </a>
+        <p>Type:</p>
+    </div>
+
+    <div class="card legatus">
+        <span class="badge-type wind">Winged Beast / Wind</span>
+        <img src="https://images.ygoprodeck.com/images/cards/82885942.jpg" alt="Legatus" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15731" target="_blank" class="card-link">
+            <h3>Dragunity Legatus</h3>
+        </a>
+        <p>Type:</p>
+    </div>
+
+    <div class="card speedburst">
+        <span class="badge-type dark">Dragon / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/31123642.jpg" alt="Speedburst" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=13745" target="_blank" class="card-link">
+            <h3>Speedburst Dragon</h3>
+        </a>
+        <p>Type:</p>
+    </div>
+
+    <h2 class="extra-deck-monsters">Extra Deck Monsters</h2>
+
+    <div class="card fusion deck-boss alternative-ultimate">
+        <span class="badge-type blue-eyes">Dragon / Fusion / Light</span>
+        <img src="https://images.ygoprodeck.com/images/cards/11366199.jpg" alt="Alternative Ultimate" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=14467" target="_blank" class="card-link">
+            <h3>Blue-Eyes Alternative Ultimate Dragon</h3>
+        </a>
+        <p>Type: Deck Boss</p>
+    </div>
+
+    <div class="card synchro">
+        <span class="badge-type light">Dragon / Synchro / Light</span>
+        <img src="https://images.ygoprodeck.com/images/cards/40905223.jpg" alt="Azure-Eyes" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=10738" target="_blank" class="card-link">
+            <h3>Azure-Eyes Silver Dragon</h3>
+        </a>
+        <p>Type: Boss / Revive & Protect</p>
+    </div>
+
+    <div class="card synchro">
+        <span class="badge-type dark">Dragon / Synchro / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/23533469.jpg" alt="Rudy Rose" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15995" target="_blank" class="card-link">
+            <h3>Rudy Rose Dragon</h3>
+        </a>
+        <p>Type: GY Ban</p>
+    </div>
+
+    <h2 class="spell">Spells & Traps</h2>
+
+    <div class="card creature-dest">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/14041762.jpg" alt="Ultimate Creature" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=13994" target="_blank" class="card-link">
+            <h3>The Ultimate Creature of Destruction</h3>
+        </a>
+        <p>Type: Protection</p>
+    </div>
+
+    <div class="card iron-thunder">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/37169542.jpg" alt="Iron Thunder" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=19245" target="_blank" class="card-link">
+            <h3>Iron Thunder</h3>
+        </a>
+        <p>Type: Counter</p>
+    </div>
+
+    <div class="card return-lords">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/6853254.jpg" alt="Return Lords" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12444" target="_blank" class="card-link">
+            <h3>Return of The Dragon Lords</h3>
+        </a>
+        <p>Type: Revive / Shield</p>
+    </div>
+
+    <div class="card call-haunted">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/97077563.jpg" alt="Call Haunted" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=4865" target="_blank" class="card-link">
+            <h3>Call of The Haunted</h3>
+        </a>
+        <p>Type: Continuous Revive</p>
+    </div>
+
+    <div class="card back-front">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/59919307.jpg" alt="Back Front" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=13116" target="_blank" class="card-link">
+            <h3>Back to the Front</h3>
+        </a>
+        <p>Type: Defense Summon</p>
+    </div>
+</div>
+
+</div>
+
+    <footer class="credit">
+      <div class="container text-center">
+        <p>Trang web này được làm bởi <strong>Nguyễn Thanh Lâm</strong></p>
+      </div>
+    </footer>
+
+  </body>
+</html>

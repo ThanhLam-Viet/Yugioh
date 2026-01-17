@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thanh Lâm</title>
+    <style>
+      .container {
+          display: flex;
+          flex-wrap: wrap; /* Wrap để xuống dòng khi hết chỗ */
+          padding: 5px;
+          justify-content: left;
+      }
+
+      .container h2 {
+        width: 100%
+      }
+
+      .card-link {
+          text-decoration: none;
+          color: inherit;
+      } 
+
+      .card-link h3:hover {
+          color: #228B22;
+      }
+
+      .card {
+          width: 200px;
+          border: 1px solid #ccc;
+          padding: 10px;
+          text-align: center;
+          border-radius: 8px; 
+          margin: 10px;
+      }
+
+      .card img {
+          width: 100%;
+          height: auto;
+      }
+
+      .card h3 {
+          font-size: 18px;
+          margin: 10px 0;
+      }
+
+      .card p {
+          font-size: 14px;
+          color: #555;
+      }
+
+      .card:hover {
+        border: 2px solid #228B22;
+      }
+      
+      .fusion h3:hover{
+        color: #9251A3;
+      }
+
+      .fusion:hover{
+        border: 2px solid #9251A3;
+      }
+
+      .xyz h3:hover{
+        color: #000000;
+      }
+
+      .xyz:hover{
+        border: 2px solid #000000;
+      }
+
+      .synchro:hover{
+        border: 2px solid #686A71;
+      }
+
+      .synchro h3:hover{
+        color: #686A71;
+      }
+      
+      /* Từ đoạn css này đến hết css là do Gemini gợi ý để trang trí thẻ bài*/
+
+      .deck-boss {
+        border: 2px solid #9251A3;
+        box-shadow: 0 0 30px #9251A3; 
+        animation: pulse-purple 2s infinite ease-in-out;
+      }
+
+      .deck-boss:hover {
+        box-shadow: 0 0 50px #9251A3; 
+      }
+
+      .deck-boss img {
+        filter: contrast(1.1); 
+      }
+
+      .deck-boss:hover img {
+        animation: flare 0.5s ease-in-out;
+      }
+
+      @keyframes flare {
+        0% { filter: brightness(1.5); }
+        50% { filter: brightness(2) contrast(1.2); }
+        100% { filter: brightness(1.5); }
+      }
+
+      @keyframes pulse-purple {
+        0% { box-shadow: 0 0 15px rgba(146, 81, 163, 0.4); }
+        50% { box-shadow: 0 0 30px rgba(146, 81, 163, 0.8); }
+        100% { box-shadow: 0 0 15px rgba(146, 81, 163, 0.4); }
+      }
+
+      .rebellion {
+        border: 2px solid #000000;
+        box-shadow: 0 0 30px #000000; 
+        animation: pulse-black 2s infinite ease-in-out;
+      }
+
+      .rebellion:hover {
+        box-shadow: 0 0 50px #000000; 
+      }
+
+      .rebellion img {
+        filter: contrast(1.1); 
+      }
+      
+      @keyframes pulse-black {
+        0% { box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); }
+        50% { box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); }
+        100% {  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); }
+      }
+
+      .credit {
+        background-color: #ffffff;
+        border-top: 1px solid #ccc; 
+        padding: 20px 0;           
+        margin-top: 50px;
+      }
+
+      .credit p {
+        margin: 0;
+        color: #666;
+        font-family: sans-serif;
+        font-size: 14px;
+      } 
+
+      .credit strong {
+        color: #333;
+      }
+
+      .badge-type {
+        font-size: 11px;
+        padding: 3px 10px;
+        border-radius: 4px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        z-index: 99;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+      }
+
+      .badge-type.dark { background-color: #563061; }
+      .badge-type.light { background-color: #D4AF37; color: #000; }
+      .badge-type.wind { background-color: #228B22; }
+      .badge-type.earth { background-color: #8B4513; }
+      .badge-type.spell { background-color: #1D837D; }
+      .badge-type.trap { background-color: #BC3060; }
+
+      .badge-status {
+        font-size: 10px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        z-index: 99;
+        pointer-events: none;
+        box-shadow: -1px -1px 5px rgba(0,0,0,0.5);
+      }
+      .badge-status.out {
+        background-color: #e74c3c; /* Màu đỏ cảnh báo */
+        border: 1px solid #ff0000;
+      }
+    
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../Cuối khóa/index.html">Predaplant.com</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../Cuối khóa/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../Cuối khóa/index2.html">Tạo lá bài</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Ko search đc đâu" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  
+<div class="container">
+    <h2 class="main-deck-monsters">Main Deck Monsters</h2>
+
+    <div class="card scorpio">
+        <span class="badge-type dark">Plant / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/35272499.jpg" alt="Scorpio" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12923" target="_blank" class="card-link">
+            <h3>Predaplant Ophrys Scorpio</h3>
+        </a>
+        <p>Type: Combo Starter</p>
+    </div>
+
+    <div class="card cobra">
+        <span class="badge-type dark">Plant / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/61677004.jpg" alt="Cobra" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12924" target="_blank" class="card-link">
+            <h3>Predaplant Darlingtonia Cobra</h3>
+        </a>
+        <p>Type: Fusion Searcher</p>
+    </div>
+
+    <div class="card byblisp">
+        <span class="badge-type dark">Plant / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/44932065.jpg" alt="Byblisp" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=17129" target="_blank" class="card-link">
+            <h3>Predaplant Byblisp</h3>
+        </a>
+        <p>Type: Combo Searcher</p>
+    </div>
+
+    <div class="card chlamydosundew">
+        <span class="badge-type dark">Plant / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/89181134.jpg" alt="Chlamydosundew" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12834" target="_blank" class="card-link">
+            <h3>Predaplant Chlamydosundew</h3>
+        </a>
+        <p>Type: Fusion Support</p>
+    </div>
+
+    <div class="card spinodionaea">
+        <span class="badge-type dark">Plant / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/52792430.jpg" alt="Spinodionaea" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12833" target="_blank" class="card-link">
+            <h3>Predaplant Spinodionaea</h3>
+        </a>
+        <p>Type: Counter Planter</p>
+    </div>
+
+    <div class="card banksiogre">
+        <span class="badge-type dark">Plant/ Tuner / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/22138839.jpg" alt="Banksiogre" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=13055" target="_blank" class="card-link">
+            <h3>Predaplant Banksiogre</h3>
+        </a>
+        <p>Type: Counter Planter</p>
+    </div>
+
+    <div class="card sarraceniant">
+        <span class="badge-type dark">Plant / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/53819028.jpg" alt="Sarraceniant" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12830" target="_blank" class="card-link">
+            <h3>Predaplant Sarraceniant</h3>
+        </a>
+        <p>Type: Defender</p>
+    </div>
+
+    <div class="card cordyceps">
+        <span class="badge-type dark">Plant / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/7161742.jpg" alt="Cordyceps" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12925" target="_blank" class="card-link">
+            <h3>Predaplant Cordyceps</h3>
+        </a>
+        <p>Type: Resource Recyclers</p>
+    </div>
+
+    <div class="card heliamphorhynchus">
+        <span class="badge-type dark">Plant / Dark</span>
+        <span class="badge-status out">Sắp loại biên</span>
+        <img src="https://images.ygoprodeck.com/images/cards/5259518.jpg" alt="Heliamphorhynchus" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=14602" target="_blank" class="card-link">
+            <h3>Predaplant Heliamphorhynchus</h3>
+        </a>
+        <p>Type: Resource Recyclers</p>
+    </div>
+
+    <div class="card hydra">
+        <span class="badge-type dark">Plant / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/99913726.jpg" alt="Hydra" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12831" target="_blank" class="card-link">
+            <h3>Predaplant Drosophyllum Hydra</h3>
+        </a>
+        <p>Type: Attacker</p>
+    </div>
+
+    <div class="card nepenthes">
+        <span class="badge-type dark">Plant / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/22011689.jpg" alt="Moray Nepenthes" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12597" target="_blank" class="card-link">
+            <h3>Predaplant Moray Nepenthes</h3>
+        </a>
+        <p>Type: Attacker</p>
+    </div>
+
+    <div class="card assailant">
+        <span class="badge-type earth">Warrior / Earth</span>
+        <span class="badge-status out">Sắp loại biên</span>
+        <img src="https://images.ygoprodeck.com/images/cards/70074904.jpg" alt="D.D. Assailant" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=5932" target="_blank" class="card-link">
+            <h3>D.D. Assailant</h3>
+        </a>
+        <p>Type: Defender</p>
+    </div>
+
+    <div class="card thunder">
+        <span class="badge-type light">Thunder / Light</span>
+        <img src="https://images.ygoprodeck.com/images/cards/70493141.jpg" alt="Thunder" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=13075" target="_blank" class="card-link">
+            <h3>The Ascended of Thunder</h3>
+        </a>
+        <p>Type: Attacker</p>
+    </div>
+
+    <h2 class="extra-deck-monsters">Extra Deck Monsters</h2>
+
+    <div class="card fusion ambulomelides">
+        <span class="badge-type dark">Plant / Fusion / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/66309175.jpg" alt="Ambulomelides" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=17148" target="_blank" class="card-link">
+            <h3>Predaplant Ambulomelides</h3>
+        </a>
+        <p>Type: Boss / Summon & Consume</p>
+    </div>
+
+    <div class="card fusion starving-venom">
+        <span class="badge-type dark">Dragon / Fusion / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/41209827.jpg" alt="Starving Venom" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12628" target="_blank" class="card-link">
+            <h3>Starving Venom Fusion Dragon</h3>
+        </a>
+        <p>Type: Boss / Heavy Striker</p>
+    </div>
+
+    <div class="card fusion deck-boss triphyoverutum">
+        <span class="badge-type dark">Plant / Fusion / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/79864860.jpg" alt="Triphyoverutum" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=14601" target="_blank" class="card-link">
+            <h3>Predaplant Triphyoverutum</h3>
+        </a>
+        <p>Type: Deck Boss</p>
+    </div>
+
+    <div class="card synchro alexander">
+        <span class="badge-type wind">Fiend / Synchro / Wind</span>
+        <img src="https://images.ygoprodeck.com/images/cards/6766208.jpg" alt="Alexander" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=13079" target="_blank" class="card-link">
+            <h3>D/D/D Gust High King Alexander</h3>
+        </a>
+        <p>Type: Boss</p>
+    </div>
+
+    <div class="card xyz rebellion">
+        <span class="badge-type dark">Dragon / Xyz / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/16195942.jpg" alt="Rebellion Xyz Dragon" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=11385" target="_blank" class="card-link">
+            <h3>Dark Rebellion Xyz Dragon</h3>
+        </a>
+        <p>Type: The Big Boss </p>
+    </div>
+
+    <h2 class="spell">Spells & Traps</h2>
+
+    <div class="card predapractice">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/31643613.jpg" alt="Predapractice" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=14603" target="_blank" class="card-link">
+            <h3>Predapractice</h3>
+        </a>
+        <p>Type: Summon & Search</p>
+    </div>
+
+    <div class="card recycling-plant">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/22829942.jpg" alt="Fusion Recycling Plant" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12872" target="_blank" class="card-link">
+            <h3>Fusion Recycling Plant</h3>
+        </a>
+        <p>Type: Domain Expansion</p>
+    </div>
+
+    <div class="card polymerization">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/24094653.jpg" alt="Polymerization" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=4837" target="_blank" class="card-link">
+            <h3>Polymerization</h3>
+        </a>
+        <p>Type: Fusion Core</p>
+    </div>
+
+    <div class="card predaponics">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/88069597.jpg" alt="Predaponics" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12837" target="_blank" class="card-link">
+            <h3>Predaponics</h3>
+        </a>
+        <p>Type: Recycle Resources</p>
+    </div>
+
+    <div class="card fusion-recovery">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/18511384.jpg" alt="Fusion Recovery" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=6431" target="_blank" class="card-link">
+            <h3>Fusion Recovery</h3>
+        </a>
+        <p>Type: Resource Recovery</p>
+    </div>
+
+    <div class="card bringer">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/54261514.jpg" alt="Final Bringer" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=20540" target="_blank" class="card-link">
+            <h3>Final Bringer of The End Times</h3>
+        </a>
+        <p>Type: Destroy Spell</p>
+    </div>
+
+    <div class="card big-bang">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/61127349.jpg" alt="Big Bang Shot" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=5669" target="_blank" class="card-link">
+            <h3>Big Bang Shot</h3>
+        </a>
+        <p>Type: Equip Spell</p>
+    </div>
+
+    <div class="card duality">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/98645731.jpg" alt="Pot of Duality" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=8993" target="_blank" class="card-link">
+            <h3>Pot of Duality</h3>
+        </a>
+        <p>Type: Search Spell</p>
+    </div>
+
+    <div class="card predaplanning">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/44536921.jpg" alt="Predaplanning" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=14605" target="_blank" class="card-link">
+            <h3>Predaplanning</h3>
+        </a>
+        <p>Type: Plant Counter</p>
+    </div>
+
+    <div class="card solemn">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/41420027.jpg" alt="Solemn Judgment" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=4861" target="_blank" class="card-link">
+            <h3>Solemn Judgment</h3>
+        </a>
+        <p>Type: Counter</p>
+    </div>
+
+    <div class="card waboku">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/12607053.jpg" alt="Waboku" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=4886" target="_blank" class="card-link">
+            <h3>Waboku</h3>
+        </a>
+        <p>Type: Delay</p>
+    </div>
+
+    <div class="card bribe">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/77538567.jpg" alt="Dark Bribe" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=7349" target="_blank" class="card-link">
+            <h3>Dark Bribe</h3>
+        </a>
+        <p>Type: Counter</p>
+    </div>
+
+    <div class="card the-front">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/59919307.jpg" alt="Back to the Front" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=13116" target="_blank" class="card-link">
+            <h3>Back to the Front</h3>
+        </a>
+        <p>Type: Summon</p>
+    </div>
+
+    <h2 class="spell">Wish List</h2>
+
+    <div class="card metaverse">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/89208725.jpg" alt="Metaverse" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=13292" target="_blank" class="card-link">
+            <h3>Metaverse</h3>
+        </a>
+        <p>Type: Domain Searcher</p>
+    </div>
+
+    <div class="card lair">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/59160188.jpg" alt="Lair of Darkness" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=13686" target="_blank" class="card-link">
+            <h3>Lair of Darkness</h3>
+        </a>
+        <p>Type: Domain</p>
+    </div>
+
+    <div class="card lilith">
+        <span class="badge-type dark">Fiend / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/23898021.jpg" alt="Lilith" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=13682" target="_blank" class="card-link">
+            <h3>Lilith, Lady of Lament</h3>
+        </a>
+        <p>Type: Trap Recycler</p>
+    </div>
+
+    <div class="card nightmare">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/42956963.jpg" alt="Nightmare Archfiends" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=8063" target="_blank" class="card-link">
+            <h3>Nightmare Archfiends</h3>
+        </a>
+        <p>Type: Tokens Summoner</p>
+    </div>
+
+    <div class="card fusion dragostapelia">
+        <span class="badge-type dark">Plant / Fusion / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/69946549.jpg" alt="Dragostapelia" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12870" target="_blank" class="card-link">
+            <h3>Predaplant Dragostapelia</h3>
+        </a>
+        <p>Type: Boss / Negate</p>
+    </div>
+
+    <div class="card bufolicula">
+        <span class="badge-type dark">Plant / Pendulum / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/70427670.jpg" alt="Bufolicula" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=17130" target="_blank" class="card-link">
+            <h3>Predaplant Bufolicula</h3>
+        </a>
+        <p>Type: Fusion Pendulum</p>
+    </div>
+
+    <div class="card triantis">
+        <span class="badge-type dark">Plant / Pendulum / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/17825378.jpg" alt="Triantis" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=17131" target="_blank" class="card-link">
+            <h3>Predaplant Triantis</h3>
+        </a>
+        <p>Type: Counter Spreader</p>
+    </div>
+
+    <div class="card drosera">
+        <span class="badge-type dark">Plant / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/69105797.jpg" alt="Drosera" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12598" target="_blank" class="card-link">
+            <h3>Predaplant Squid Drosera</h3>
+        </a>
+        <p>Type: Multi-Attacker</p>
+    </div>
+
+    <div class="card orchid">
+        <span class="badge-type dark">Plant / Pendulum / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/30537973.jpg" alt="Spider Orchid" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=13990" target="_blank" class="card-link">
+            <h3>Predaplant Spider Orchid</h3>
+        </a>
+        <p>Type: Backrow Removal</p>
+    </div>
+
+    <div class="card fusion deck-boss predapower">
+        <span class="badge-type dark">Dragon / Fusion / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/39915560.jpg" alt="Predapower" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=17147" target="_blank" class="card-link">
+            <h3>Starving Venom Predapower Fusion Dragon</h3>
+        </a>
+        <p>Type: Deck Boss</p>
+    </div>
+
+    <div class="card fusion deck-boss greedy-venom">
+        <span class="badge-type dark">Dragon / Fusion / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/51570882.jpg" alt="Greedy Venom" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12836" target="_blank" class="card-link">
+            <h3>Greedy Venom Fusion Dragon</h3>
+        </a>
+        <p>Type: Deck Boss</p>
+    </div>
+
+    <div class="card predaprime">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/8148322.jpg" alt="Predaprime Fusion" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=14604" target="_blank" class="card-link">
+            <h3>Predaprime Fusion</h3>
+        </a>
+        <p>Type: Quick Fusion</p>
+    </div>
+
+    <div class="card sheep">
+        <span class="badge-type earth">Beast / Link / Earth</span>
+        <img src="https://images.ygoprodeck.com/images/cards/50277355.jpg" alt="Cross-Sheep" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=14856" target="_blank" class="card-link">
+            <h3>Cross-Sheep</h3>
+        </a>
+        <p>Type: Link Support</p>
+    </div>
+
+    <div class="card foolish">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/81439173.jpg" alt="Foolish Burial" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=5236" target="_blank" class="card-link">
+            <h3>Foolish Burial</h3>
+        </a>
+        <p>Type: GY Setup</p>
+    </div>
+
+</div>
+
+    <footer class="credit">
+      <div class="container text-center">
+        <p>Trang web này được làm bởi <strong>Nguyễn Thanh Lâm</strong></p>
+      </div>
+    </footer>
+
+  </body>
+</html>
