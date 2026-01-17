@@ -157,6 +157,35 @@
         background-color: #e74c3c; /* Màu đỏ cảnh báo */
         border: 1px solid #ff0000;
       }
+
+      /* Responsive cho điện thoại */
+@media (max-width: 600px) {
+    .container {
+        padding: 5px;
+        justify-content: center;
+    }
+
+    .card {
+        /* Tính toán: (100% / 2) trừ đi margin để hiện 2 thẻ 1 hàng */
+        width: calc(50% - 20px); 
+        margin: 5px;
+        padding: 8px;
+    }
+
+    .card h3 {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .card p {
+        font-size: 12px;
+    }
+
+    .badge-type {
+        font-size: 9px;
+        padding: 2px 5px;
+    }
+}
     
 
     </style>
