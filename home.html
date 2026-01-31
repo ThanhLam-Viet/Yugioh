@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thanh Lâm</title>
+    <style>
+      .container {
+          display: flex;
+          flex-wrap: wrap; /* Wrap để xuống dòng khi hết chỗ */
+          padding: 5px;
+          justify-content: left;
+      }
+
+      .container h2 {
+        width: 100%
+      }
+
+      .card-link {
+          text-decoration: none;
+          color: inherit;
+      } 
+
+      .card-link h3:hover {
+          color: #228B22;
+      }
+
+      .card {
+          width: 200px;
+          border: 1px solid #ccc;
+          padding: 10px;
+          text-align: center;
+          border-radius: 8px; 
+          margin: 10px;
+      }
+
+      .card img {
+          width: 100%;
+          height: auto;
+      }
+
+      .card h3 {
+          font-size: 18px;
+          margin: 10px 0;
+      }
+
+      .card p {
+          font-size: 14px;
+          color: #555;
+      }
+
+      .card:hover {
+        border: 2px solid #228B22;
+      }
+      
+      .fusion h3:hover{
+        color: #9251A3;
+      }
+
+      .fusion:hover{
+        border: 2px solid #9251A3;
+      }
+
+      .xyz h3:hover{
+        color: #000000;
+      }
+
+      .xyz:hover{
+        border: 2px solid #000000;
+      }
+
+      .synchro:hover{
+        border: 2px solid #686A71;
+      }
+
+      .synchro h3:hover{
+        color: #686A71;
+      }
+
+      .credit {
+        background-color: #ffffff;
+        border-top: 1px solid #ccc; 
+        padding: 20px 0;
+        margin-top: 20px;      
+      }
+
+      .credit p {
+        margin: 0;
+        color: #666;
+        font-family: sans-serif;
+        font-size: 14px;
+      } 
+
+      .credit strong {
+        color: #333;
+      }
+
+      .footer-text{
+        display: flex;
+        flex-direction: column;
+      }
+      
+      /* Từ đoạn css này đến hết css là do Gemini gợi ý để trang trí thẻ bài*/
+
+      .predaplant {
+        border: 2px solid #9251A3;
+        box-shadow: 0 0 30px #9251A3; 
+        animation: pulse-purple 2s infinite ease-in-out;
+      }
+
+      @keyframes pulse-purple {
+        0% { box-shadow: 0 0 15px rgba(146, 81, 163, 0.4); }
+        50% { box-shadow: 0 0 30px rgba(146, 81, 163, 0.8); }
+        100% { box-shadow: 0 0 15px rgba(146, 81, 163, 0.4); }
+      }
+
+      .blue-eyes {
+          border: 2px solid #00b4d8;
+          box-shadow: 0 0 25px rgba(0, 180, 216, 0.6);
+          animation: pulse-blue 2s infinite ease-in-out;
+      }
+
+      @keyframes pulse-blue {
+        0% { box-shadow: 0 0 15px rgba(0, 180, 216, 0.4); }
+        50% { box-shadow: 0 0 30px rgba(0, 180, 216, 0.8); }
+        100% { box-shadow: 0 0 15px rgba(0, 180, 216, 0.4); }
+      }
+
+      .badge-type {
+        font-size: 11px;
+        padding: 3px 10px;
+        border-radius: 4px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        z-index: 99;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+      }
+
+      .badge-type.predaplant { background-color: #563061; }
+      .badge-type.blue-eyes { background-color: #1a3a6c; }
+      
+
+      .badge-status {
+        font-size: 10px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        z-index: 99;
+        pointer-events: none;
+        box-shadow: -1px -1px 5px rgba(0,0,0,0.5);
+      }
+      .badge-status.out {
+        background-color: #e74c3c; /* Màu đỏ cảnh báo */
+        border: 1px solid #ff0000;
+      }
+
+            /* Responsive cho điện thoại */
+@media (max-width: 600px) {
+    .container {
+        padding: 5px;
+        justify-content: center;
+    }
+
+    .card {
+        /* Tính toán: (100% / 2) trừ đi margin để hiện 2 thẻ 1 hàng */
+        width: calc(50% - 20px); 
+        margin: 5px;
+        padding: 8px;
+    }
+
+    .badge-type {
+        font-size: 9px;
+        padding: 2px 5px;
+    }
+}
+    
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Predaplant.com</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://thanhlam-viet.github.io/Yugioh/create.html">Create a Card</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://thanhlam-viet.github.io/Yugioh/login.html">Login</a></li>
+            <li><a class="dropdown-item" href="https://thanhlam-viet.github.io/Yugioh/signup.html">Sign up</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Ko search đc đâu" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  
+<div class="container">
+    <h2 class="main-deck-monsters">Main Deck Monsters</h2>
+
+    <div class="card predaplant">
+        <span class="badge-type predaplant">Main Deck</span>
+        <img src="https://images.ygoprodeck.com/images/cards/35272499.jpg" alt="Predaplant" loading="lazy">
+        <a href="https://thanhlam-viet.github.io/Yugioh/predaplant.html" class="card-link">
+            <h3>Predaplant</h3>
+        </a>
+        <p>Play-Style: Fusion & Consume</p>
+    </div>
+
+    <div class="card blue-eyes">
+        <span class="badge-type blue-eyes">Deck</span>
+        <img src="https://images.ygoprodeck.com/images/cards/89631139.jpg" alt="Blue-Eyes" loading="lazy">
+        <a href="https://thanhlam-viet.github.io/Yugioh/blueeyes.html" class="card-link">
+            <h3>Blue-Eyes (WIP)</h3>
+        </a>
+        <p>Play-Style: Beatdown</p>
+    </div>
+
+</div>
+
+    <footer class="credit">
+      <div class="container footer-text">
+        <p>Trang web này được làm bởi <strong>Nguyễn Thanh Lâm</strong></p>
+        <p>Đây là trang web sưu tập bài, không phải web bán hàng</p>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .create {
+            margin: 20px 60px;
+      }
+
+      .credit {
+        background-color: #ffffff;
+        border-top: 1px solid #ccc; 
+        padding: 20px 0;
+        margin-top: 20px;      
+      }
+
+      .credit p {
+        margin: 0;
+        color: #666;
+        font-family: sans-serif;
+        font-size: 14px;
+      } 
+
+      .credit strong {
+        color: #333;
+      }
+
+      .footer-text{
+        display: flex;
+        flex-direction: column;
+      }
+
+      .btn-success{
+        margin-left: 60px;
+      }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://thanhlam-viet.github.io/Yugioh/home.html">Predaplant.com</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="https://thanhlam-viet.github.io/Yugioh/home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://thanhlam-viet.github.io/Yugioh/create.html">Create a Card</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://thanhlam-viet.github.io/Yugioh/login.html">Login</a></li>
+            <li><a class="dropdown-item" href="https://thanhlam-viet.github.io/Yugioh/signup.html">Sign up</a></li>
+          </ul>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Ko search đc đâu" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    <form class="create">
+        <label class="name">Username:</label>
+        <br>
+        <input type="text" class="name" placeholder="Username">
+        <br>
+        <label class="email">Email:</label>
+        <br>
+        <input type="email" class="email" placeholder="example@gmail.com" required>
+        <br>
+        <label class="password">Password: </label>
+        <br>
+        <input type="text" class="password" placeholder="Password">
+        <br>
+        <label class="password">Confirm Password: </label>
+        <br>
+        <input type="text" class="cpassword" placeholder="Cpassword">
+    </form>
+
+    <button type="button" class="btn btn-success">Sign up</button>
+
+    <footer class="credit">
+      <div class="container footer-text">
+        <p>Trang web này được làm bởi <strong>Nguyễn Thanh Lâm</strong></p>
+        <p>Đây là trang web sưu tập bài, không phải web bán hàng</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
