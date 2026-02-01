@@ -140,9 +140,10 @@
       }
 
       .badge-type.dark { background-color: #563061; }
-      .badge-type.light { background-color: #D4AF37; color: #000; }
+      .badge-type.light { background-color: #D4AF37; }
       .badge-type.wind { background-color: #228B22; }
       .badge-type.earth { background-color: #8B4513; }
+      .badge-type.water { background-color: #0077be; }
       .badge-type.spell { background-color: #1D837D; }
       .badge-type.trap { background-color: #BC3060; }
 
@@ -192,25 +193,25 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="https://thanhlam-viet.github.io/Yugioh/index.html">Predaplant.com</a>
+    <a class="navbar-brand" href="index.md">Predaplant.com</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="https://thanhlam-viet.github.io/Yugioh/index.html">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.md">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://thanhlam-viet.github.io/Yugioh/create.html">Create a Card</a>
+          <a class="nav-link" href="create.md">Create a Card</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Account
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="https://thanhlam-viet.github.io/Yugioh/login.html">Login</a></li>
-            <li><a class="dropdown-item" href="https://thanhlam-viet.github.io/Yugioh/signup.html">Sign up</a></li>
+            <li><a class="dropdown-item" href="login.md">Login</a></li>
+            <li><a class="dropdown-item" href="signup.md">Sign up</a></li>
           </ul>
       </ul>
       <form class="d-flex" role="search">
@@ -262,6 +263,42 @@
         <p>Type: Searcher & Summoner </p>
     </div>
 
+    <div class="card dragon-spirit">
+        <span class="badge-type light">Dragon / Light</span>
+        <img src="https://images.ygoprodeck.com/images/cards/45467446.jpg" alt="Dragon Spirit of White" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12290" target="_blank" class="card-link">
+            <h3>Dragon Spirit of White</h3>
+        </a>
+        <p>Type: Backrow Banisher</p>
+    </div>
+
+    <div class="card master-pendulum">
+        <span class="badge-type light">Dragon / Pendulum / Light</span>
+        <img src="https://images.ygoprodeck.com/images/cards/75195825.jpg" alt="Master Pendulum" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12131" target="_blank" class="card-link">
+            <h3>Master Pendulum, the Dracoslayer</h3>
+        </a>
+        <p>Type: Pendulum Normal</p>
+    </div>
+
+    <div class="card swamp">
+        <span class="badge-type water">Aqua / Water</span>
+        <img src="https://images.ygoprodeck.com/images/cards/79109599.jpg" alt="King of The Swamp" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=6044" target="_blank" class="card-link">
+            <h3>King of The Swamp</h3>
+        </a>
+        <p>Type: Fusion Substitute</p>
+    </div>
+
+    <div class="card dictator">
+        <span class="badge-type dark">Spellcaster / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/66961194.jpg" alt="Dictator of D." loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=16810" target="_blank" class="card-link">
+            <h3>Dictator of D.</h3>
+        </a>
+        <p>Type: Special Summoner</p>
+    </div>
+
     <div class="card metal">
         <span class="badge-type dark">Dragon/ Dark</span>
         <img src="https://images.ygoprodeck.com/images/cards/88264978.jpg" alt="REDMD" loading="lazy">
@@ -298,15 +335,33 @@
         <p>Type:</p>
     </div>
 
+    <div class="card jet">
+        <span class="badge-type light">Dragon / Light</span>
+        <img src="https://images.ygoprodeck.com/images/cards/30576089.jpg" alt="Blue-Eyes Jet Dragon" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=16809" target="_blank" class="card-link">
+            <h3>Blue-Eyes Jet Dragon</h3>
+        </a>
+        <p>Type: Protector </p>
+    </div>
+
     <h2 class="extra-deck-monsters">Extra Deck Monsters</h2>
 
     <div class="card fusion deck-boss alternative-ultimate">
-        <span class="badge-type blue-eyes">Dragon / Fusion / Light</span>
+        <span class="badge-type light">Dragon / Fusion / Light</span>
         <img src="https://images.ygoprodeck.com/images/cards/43228023.jpg" alt="Alternative Ultimate" loading="lazy">
         <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=14365" target="_blank" class="card-link">
             <h3>Blue-Eyes Alternative Ultimate Dragon</h3>
         </a>
         <p>Type: Deck Boss</p>
+    </div>
+
+    <div class="card deck-boss twin-burst">
+        <span class="badge-type light">Dragon / Fusion / Light</span>
+        <img src="https://images.ygoprodeck.com/images/cards/2129638.jpg" alt="Blue-Eyes Twin Burst Dragon" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12252" target="_blank" class="card-link">
+            <h3>Blue-Eyes Twin Burst Dragon</h3>
+        </a>
+        <p>Type: Combat Boss</p>
     </div>
 
     <div class="card synchro">
@@ -318,16 +373,25 @@
         <p>Type: Boss / Revive & Protect</p>
     </div>
 
-    <div class="card synchro">
-        <span class="badge-type dark">Dragon / Synchro / Dark</span>
-        <img src="https://images.ygoprodeck.com/images/cards/40139997.jpg" alt="Rudy Rose" loading="lazy">
-        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15996" target="_blank" class="card-link">
-            <h3>Ruddy Rose Dragon</h3>
+    <h2 class="spell">Spells & Traps</h2>
+
+    <div class="card return-lords">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/6853254.jpg" alt="Return Lords" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12364" target="_blank" class="card-link">
+            <h3>Return of The Dragon Lords</h3>
         </a>
-        <p>Type: GYs Ban</p>
+        <p>Type: Revive / Shield</p>
     </div>
 
-    <h2 class="spell">Spells & Traps</h2>
+    <div class="card melody">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/48800175.jpg" alt="The Melody" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=7508" target="_blank" class="card-link">
+            <h3>The Melody of Awakening Dragon</h3>
+        </a>
+        <p>Type: Dragon Searcher</p>
+    </div>
 
     <div class="card creature-dest">
         <span class="badge-type trap">Trap</span>
@@ -336,6 +400,105 @@
             <h3>The Ultimate Creature of Destruction</h3>
         </a>
         <p>Type: Protection</p>
+    </div>
+
+    <div class="card bingo-machine">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/93437091.jpg" alt="Bingo Machine" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=13844" target="_blank" class="card-link">
+            <h3>Bingo Machine, Go!!!</h3>
+        </a>
+        <p>Type: Searcher</p>
+    </div>
+
+    <div class="card shallow-grave">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/43434803.jpg" alt="The Shallow Grave" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=4965" target="_blank" class="card-link">
+            <h3>The Shallow Grave</h3>
+        </a>
+        <p>Type: Special Summon</p>
+    </div>
+
+    <div class="card book-moon">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/14087893.jpg" alt="Book of Moon" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=5432" target="_blank" class="card-link">
+            <h3>Book of Moon</h3>
+        </a>
+        <p>Type: Control</p>
+    </div>
+
+    <div class="card monster-reborn">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/83764719.jpg" alt="Monster Reborn" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=4842" target="_blank" class="card-link">
+            <h3>Monster Reborn</h3>
+        </a>
+        <p>Type: Revive</p>
+    </div>
+
+    <div class="card twin-twisters">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/43898403.jpg" alt="Twin Twisters" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12175" target="_blank" class="card-link">
+            <h3>Twin Twisters</h3>
+        </a>
+        <p>Type: Removal</p>
+    </div>
+
+    <div class="card dragon-ravine">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/62265044.jpg" alt="Dragon Ravine" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=9049" target="_blank" class="card-link">
+            <h3>Dragon Ravine</h3>
+        </a>
+        <p>Type: Domain</p>
+    </div>
+
+    <div class="card mst">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/5318639.jpg" alt="Mystical Space Typhoon" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=4909" target="_blank" class="card-link">
+            <h3>Mystical Space Typhoon</h3>
+        </a>
+        <p>Type: Removal</p>
+    </div>
+
+    <div class="card cosmic-cyclone">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/8267140.jpg" alt="Cosmic Cyclone" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12464" target="_blank" class="card-link">
+            <h3>Cosmic Cyclone</h3>
+        </a>
+        <p>Type: Banish</p>
+    </div>
+
+    <div class="card ultimate-fusion">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/71143015.jpg" alt="Ultimate Fusion" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=16856" target="_blank" class="card-link">
+            <h3>Ultimate Fusion</h3>
+        </a>
+        <p>Type: Fusion Spell</p>
+    </div>
+
+    <div class="card recall">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/96404912.jpg" alt="Recall" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=13117" target="_blank" class="card-link">
+            <h3>Recall</h3>
+        </a>
+        <p>Type: Counter</p>
+    </div>
+
+    <div class="card drowning-mirror">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/47475363.jpg" alt="Drowning Mirror Force" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12347" target="_blank" class="card-link">
+            <h3>Drowning Mirror Force</h3>
+        </a>
+        <p>Type: Battle Trap</p>
     </div>
 
     <div class="card iron-thunder">
@@ -347,19 +510,10 @@
         <p>Type: Counter</p>
     </div>
 
-    <div class="card return-lords">
-        <span class="badge-type spell">Spell</span>
-        <img src="https://images.ygoprodeck.com/images/cards/6853254.jpg" alt="Return Lords" loading="lazy">
-        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12444" target="_blank" class="card-link">
-            <h3>Return of The Dragon Lords</h3>
-        </a>
-        <p>Type: Revive / Shield</p>
-    </div>
-
     <div class="card call-haunted">
         <span class="badge-type trap">Trap</span>
-        <img src="https://images.ygoprodeck.com/images/cards/6853254.jpg" alt="Call Haunted" loading="lazy">
-        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12364" target="_blank" class="card-link">
+        <img src="https://images.ygoprodeck.com/images/cards/97077563.jpg" alt="Call Haunted" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=4989" target="_blank" class="card-link">
             <h3>Call of The Haunted</h3>
         </a>
         <p>Type: Continuous Revive</p>
@@ -375,52 +529,6 @@
     </div>
 
     <h2 class="wishlist">Wish List</h2>
-
-    <div class="card jet">
-        <span class="badge-type light">Dragon / Light</span>
-        <img src="https://images.ygoprodeck.com/images/cards/30576089.jpg" alt="Blue-Eyes Jet Dragon" loading="lazy">
-        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=16809" target="_blank" class="card-link">
-            <h3>Blue-Eyes Jet Dragon</h3>
-        </a>
-        <p>Type: Protector </p>
-    </div>
-
-    <div class="card spirit">
-        <span class="badge-type light">Dragon / Synchro / Light</span>
-        <img src="https://images.ygoprodeck.com/images/cards/59822133.jpg" alt="Blue-Eyes Spirit Dragon" loading="lazy">
-        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=12324" target="_blank" class="card-link">
-            <h3>Blue-Eyes Spirit Dragon</h3>
-        </a>
-        <p>Type: Boss / Negate</p>
-    </div>
-
-    <div class="card melody">
-        <span class="badge-type spell">Spell</span>
-        <img src="https://images.ygoprodeck.com/images/cards/48800175.jpg" alt="The Melody" loading="lazy">
-        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=7508" target="_blank" class="card-link">
-            <h3>The Melody of Awakening Dragon</h3>
-        </a>
-        <p>Type: Dragon Searcher</p>
-    </div>
-
-    <div class="card consonance">
-        <span class="badge-type spell">Spell</span>
-        <img src="https://images.ygoprodeck.com/images/cards/39701395.jpg" alt="Cards of Consonance" loading="lazy">
-        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=8656" target="_blank" class="card-link">
-            <h3>Cards of Consonance</h3>
-        </a>
-        <p>Type: Draw Power</p>
-    </div>
-
-    <div class="card levianeer">
-        <span class="badge-type dark">Dragon / Effect / Dark</span>
-        <img src="https://images.ygoprodeck.com/images/cards/20654247.jpg" alt="Chaos" loading="lazy">
-        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=13842" target="_blank" class="card-link">
-            <h3>Blue-Eyes Chaos Dragon</h3>
-        </a>
-        <p>Type: Chaos / Field Wipe</p>
-    </div>
-
 
 </div>
 

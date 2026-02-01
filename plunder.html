@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thanh Lâm</title>
+    <style>
+      .container {
+          display: flex;
+          flex-wrap: wrap; /* Wrap để xuống dòng khi hết chỗ */
+          padding: 5px;
+          justify-content: left;
+      }
+
+      .container h2 {
+        width: 100%
+      }
+
+      .card-link {
+          text-decoration: none;
+          color: inherit;
+      } 
+
+      .card-link h3:hover {
+          color: #228B22;
+      }
+
+      .card {
+          width: 200px;
+          border: 1px solid #ccc;
+          padding: 10px;
+          text-align: center;
+          border-radius: 8px; 
+          margin: 10px;
+      }
+
+      .card img {
+          width: 100%;
+          height: auto;
+      }
+
+      .card h3 {
+          font-size: 18px;
+          margin: 10px 0;
+      }
+
+      .card p {
+          font-size: 14px;
+          color: #555;
+      }
+
+      .card:hover {
+        border: 2px solid #228B22;
+      }
+      
+      .fusion h3:hover{
+        color: #9251A3;
+      }
+
+      .fusion:hover{
+        border: 2px solid #9251A3;
+      }
+
+      .xyz h3:hover{
+        color: #000000;
+      }
+
+      .xyz:hover{
+        border: 2px solid #000000;
+      }
+
+      .synchro:hover{
+        border: 2px solid #686A71;
+      }
+
+      .synchro h3:hover{
+        color: #686A71;
+      }
+
+      .credit {
+        background-color: #ffffff;
+        border-top: 1px solid #ccc; 
+        padding: 20px 0;
+        margin-top: 20px;      
+      }
+
+      .credit p {
+        margin: 0;
+        color: #666;
+        font-family: sans-serif;
+        font-size: 14px;
+      } 
+
+      .credit strong {
+        color: #333;
+      }
+
+      .footer-text{
+        display: flex;
+        flex-direction: column;
+      }
+      
+      /* Từ đoạn css này đến hết css là do Gemini gợi ý để trang trí thẻ bài*/
+
+      .badge-type {
+        font-size: 11px;
+        padding: 3px 10px;
+        border-radius: 4px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        z-index: 99;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+      }
+
+      .badge-type.dark { background-color: #563061; }
+      .badge-type.light { background-color: #D4AF37; color: #000; }
+      .badge-type.wind { background-color: #228B22; }
+      .badge-type.earth { background-color: #8B4513; }
+      .badge-type.water { background-color: #0077be; }
+      .badge-type.fire { background-color: #ff0000; }
+      .badge-type.spell { background-color: #1D837D; }
+      .badge-type.trap { background-color: #BC3060; }
+
+      .badge-status {
+        font-size: 10px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        z-index: 99;
+        pointer-events: none;
+        box-shadow: -1px -1px 5px rgba(0,0,0,0.5);
+      }
+      .badge-status.out {
+        background-color: #e74c3c; /* Màu đỏ cảnh báo */
+        border: 1px solid #ff0000;
+      }
+
+            /* Responsive cho điện thoại */
+@media (max-width: 600px) {
+    .container {
+        padding: 5px;
+        justify-content: center;
+    }
+
+    .card {
+        /* Tính toán: (100% / 2) trừ đi margin để hiện 2 thẻ 1 hàng */
+        width: calc(50% - 20px); 
+        margin: 5px;
+        padding: 8px;
+    }
+    
+    .badge-type {
+        font-size: 9px;
+        padding: 2px 5px;
+    }
+}
+    
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://thanhlam-viet.github.io/Yugioh/index.html">Predaplant.com</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="https://thanhlam-viet.github.io/Yugioh/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://thanhlam-viet.github.io/Yugioh/create.html">Create a Card</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://thanhlam-viet.github.io/Yugioh/login.html">Login</a></li>
+            <li><a class="dropdown-item" href="https://thanhlam-viet.github.io/Yugioh/signup.html">Sign up</a></li>
+          </ul>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Ko search đc đâu" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  
+<div class="container">
+    <h2 class="main-deck-monsters">Main Deck Monsters</h2>
+
+    <div class="card plunder">
+        <span class="badge-type water">Fiend / Water</span>
+        <img src="https://images.ygoprodeck.com/images/cards/91642007.jpg" alt="Blackeyes" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15979" target="_blank" class="card-link">
+            <h3>Blackeyes the Plunder Patroll Seaguide</h3>
+        </a>
+        <p>Type: Resource Recovery</p>
+    </div>
+
+    <div class="card plunder">
+        <span class="badge-type water">Fiend / Tuner / Water</span>
+        <img src="https://images.ygoprodeck.com/images/cards/31374201.jpg" alt="Whitebeard" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15075" target="_blank" class="card-link">
+            <h3>Whitebeard, the Plunder Patroll Helm</h3>
+        </a>
+        <p>Type: Deck Summoner</p>
+    </div>
+
+    <div class="card plunder">
+        <span class="badge-type water">Fiend / Water</span>
+        <img src="https://images.ygoprodeck.com/images/cards/68769900.jpg" alt="Redbeard" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15076" target="_blank" class="card-link">
+            <h3>Redbeard, the Plunder Patroll Mate</h3>
+        </a>
+        <p>Type: Equipment Specialist</p>
+    </div>
+
+    <div class="card plunder">
+        <span class="badge-type water">Fiend / Water</span>
+        <img src="https://images.ygoprodeck.com/images/cards/55349375.jpg" alt="Bluebeard" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15320" target="_blank" class="card-link">
+            <h3>Bluebeard, the Plunder Patroll Shipwright</h3>
+        </a>
+        <p>Type: Special Summon / Draw</p>
+    </div>
+
+    <div class="card plunder">
+        <span class="badge-type water">Fiend / Tuner / Water</span>
+        <img src="https://images.ygoprodeck.com/images/cards/81344070.jpg" alt="Goldenhair" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15321" target="_blank" class="card-link">
+            <h3>Goldenhair, the Newest Plunder Patroll</h3>
+        </a>
+        <p>Type: Self-Reviver</p>
+    </div>
+
+
+
+    <h2 class="extra-deck-monsters">Extra Deck Monsters</h2>
+
+    <div class="card plunder">
+        <span class="badge-type dark">Fiend / Link / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/67647362.jpg" alt="Blackbeard" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15079" target="_blank" class="card-link">
+            <h3>Blackbeard, the Plunder Patroll Captain</h3>
+        </a>
+        <p>Type: Deck Commander</p>
+    </div>
+
+    <div class="card plunder">
+        <span class="badge-type light">Fiend / Fusion / Light</span>
+        <img src="https://images.ygoprodeck.com/images/cards/18832779.jpg" alt="Lys" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15322" target="_blank" class="card-link">
+            <h3>Plunder Patrollship Lys</h3>
+        </a>
+        <p>Type: Negator / Boss</p>
+    </div>
+
+    <div class="card plunder">
+        <span class="badge-type dark">Fiend / Xyz / Dark</span>
+        <img src="https://images.ygoprodeck.com/images/cards/20248754.jpg" alt="Moerk" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15078" target="_blank" class="card-link">
+            <h3>Plunder Patrollship Moerk</h3>
+        </a>
+        <p>Type: Banish / Protection</p>
+    </div>
+
+    <div class="card plunder">
+        <span class="badge-type fire">Fiend / Synchro / Fire</span>
+        <img src="https://images.ygoprodeck.com/images/cards/94253655.jpg" alt="Brann" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15077" target="_blank" class="card-link">
+            <h3>Plunder Patrollship Brann</h3>
+        </a>
+        <p>Type: Backrow Removal / ATK Boost</p>
+    </div>
+
+    <div class="card plunder">
+        <span class="badge-type earth">Fiend / Synchro / Pendulum / Earth</span>
+        <img src="https://images.ygoprodeck.com/images/cards/85969517.jpg" alt="Jord" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=18186" target="_blank" class="card-link">
+            <h3>Plunder Patrollship Jord</h3>
+        </a>
+        <p>Type: Token Generator / Boss</p>
+    </div>
+
+    <h2 class="spell">Spells & Traps</h2>
+
+    <div class="card plunder-field">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/93031067.jpg" alt="Shipyarrrd" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15080" target="_blank" class="card-link">
+            <h3>Plunder Patroll Shipyarrrd</h3>
+        </a>
+        <p>Type: Domain</p>
+    </div>
+
+    <div class="card plunder">
+        <span class="badge-type spell">Spell</span>
+        <img src="https://images.ygoprodeck.com/images/cards/80621422.jpg" alt="Emblem" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15324" target="_blank" class="card-link">
+            <h3>Emblem of the Plunder Patroll</h3>
+        </a>
+        <p>Type: Equip / Boost / Summon</p>
+    </div>
+
+    <div class="card plunder-trap">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/20426176.jpg" alt="Booty" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15081" target="_blank" class="card-link">
+            <h3>Plunder Patroll Booty</h3>
+        </a>
+        <p>Type: Attribute Control / Revive</p>
+    </div>
+
+    <div class="card plunder">
+        <span class="badge-type trap">Trap</span>
+        <img src="https://images.ygoprodeck.com/images/cards/43004235.jpg" alt="Parrrty" loading="lazy">
+        <a href="https://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=15326" target="_blank" class="card-link">
+            <h3>Plunder Patroll Parrrty</h3>
+        </a>
+        <p>Type: Draw / Protection</p>
+    </div>
+
+</div>
+
+    <footer class="credit">
+      <div class="container footer-text">
+        <p>Trang web này được làm bởi <strong>Nguyễn Thanh Lâm</strong></p>
+        <p>Đây là trang web sưu tập bài, không phải web bán hàng</p>
+      </div>
+    </footer>
+
+  </body>
+</html>
